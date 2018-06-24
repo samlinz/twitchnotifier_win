@@ -1,0 +1,5 @@
+{
+	"notification_duration": 10,
+	"check_interval": 60,
+	"enable_logging": false
+}
