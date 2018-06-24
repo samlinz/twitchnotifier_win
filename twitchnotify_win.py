@@ -1,7 +1,6 @@
 # Third party libraries
 from win10toast import ToastNotifier
 import requests
-from PIL import Image
 
 # Core libraries
 import logging
@@ -13,12 +12,13 @@ import signal
 import glob
 import os.path as path
 from io import BytesIO
+from PIL import Image
 
 # Configuration
 TOAST_DURATION_SECONDS = 10
 CHECK_INTERVAL_SECONDS = 1 * 60
 STREAMS_FILE = "streamlist.txt"
-TWITCH_API_KEY = 'APIKEYHERE'
+TWITCH_API_KEY = '11ns8rulk3p89ysxwq45dmkkqvpbdv'
 API_BASE_ADDRESS = "https://api.twitch.tv/kraken/streams/{}"
 TOAST_TITLE = "Twitch stream {} is live!"
 IMAGE_DIRECTORY = "img"
@@ -31,11 +31,11 @@ log_format = logging.Formatter(fmt=LOG_FORMAT)
 log = logging.getLogger()
 log.setLevel(logging.INFO)
 
-log_fh = logging.FileHandler(LOG_FILE, mode='a', encoding='UTF-8')
+#log_fh = logging.FileHandler(LOG_FILE, mode='a', encoding='UTF-8')
 log_sh = logging.StreamHandler(sys.stdout)
-log_fh.setFormatter(log_format)
+#log_fh.setFormatter(log_format)
 log_sh.setFormatter(log_format)
-log.addHandler(log_fh)
+#log.addHandler(log_fh)
 log.addHandler(log_sh)
 
 log.info("-" * 30)
@@ -109,7 +109,7 @@ def remove_images(exceptions: list = None) -> None:
         exceptions = []
     image_files = []
     for ext in ['.ico']:
-        image_files.extend(glob.glob('img/streamer_*' + ext))
+        image_files.extend(glob.glob('img/*' + ext))
     for image in image_files:
         if len([x for x in exceptions if image.lower() in x.lower()]) > 0:
             continue
