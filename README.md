@@ -14,7 +14,7 @@ Streamer list is read every time, so no need to restart when adding or removing 
 
 Install following dependencies using pip or whatever. It is preferable to use virtual environments.
 ```
-pip install pypiwin32 setuptools win10toast requests
+pip install pypiwin32 setuptools win10toast requests pillow
 ```
 
 ## Running
@@ -22,7 +22,6 @@ Run using **pythonw.exe** to run in background.
 
 ```
 pythonw twitchnotify_win.py
-
 ```
 
-The script can be configured to run on startup, daemon installation script is upcoming.
+The script can be configured to run on startup, daemon installation script is upcoming. *install-service.ps1* installed service does not work yet.
