@@ -1,5 +1,7 @@
 ## TwitchNotifier for Windows
-Python script which polls different Twitch streams and shows toast notification when tracked user goes live.
+Python script which polls different Twitch streams and shows toast notification when tracked user goes live or changes game.
+
+![notification](anim.gif "Notfitication popping up when streamer goes live or changes game")
 
 Reads list of stream id's from *streamlist.txt*, polls them on given intervals and shows a Windows toast notification when a stream goes live.
 
